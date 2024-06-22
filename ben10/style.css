@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: rgb(7, 7, 7);
+}
+
+.box{
+    position: relative;
+    width: 200px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    background: rgb(3, 230, 3);
+    
+   
+}
+
+.box span{
+    position:absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgb(17, 211, 27);
+    transform: rotateY(calc(var(--i)*45deg))translateZ(240px);
+    -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,rgb(9, 199, 142));
+}
+
+.box span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    inset: 0;
+    box-shadow: inset 0 0 45px rgba(100, 243, 5, 0.575);
+
+}
+
+
+.box span::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.575);
+
+}
